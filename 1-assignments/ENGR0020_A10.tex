@@ -1,0 +1,983 @@
+\documentclass[addpoints,12pt]{exam}
+%\documentclass[answers,addpoints,12pt]{exam}
+\unframedsolutions
+
+\renewcommand{\solutiontitle}{\noindent\textbf{}\enspace}
+\SolutionEmphasis{\color{blue}}
+
+\usepackage{empheq}
+\usepackage{multirow}
+%\usepackage{amsmath}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}%
+\usepackage{MnSymbol}%
+\usepackage{wasysym}%
+
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{fullpage}
+\usepackage{sectsty}
+\usepackage{here}
+\usepackage{hyperref}
+%\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[]{geometry}
+\usepackage{color}
+\usepackage{paralist}
+%\setlength\textwidth{6.5in}
+\geometry{paperwidth=8.5in,paperheight=11in,nohead,top=2cm,bottom=4cm, left=2.5cm, right=4cm}
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage{wrapfig}
+
+\usepackage{ulem}
+
+\newenvironment{packed_itemize}{
+\begin{itemize}
+\vspace{-12pt}
+  \setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+
+\newif\ifisAnswers
+%\newif\ifisWhiteSpace
+
+%\isAnswerstrue
+\isAnswersfalse
+
+
+% \newcommand{\department}[1]{\def\@department{#1}}
+% 1 = ME
+% 2 = EE
+% 3 = Materials Science
+% \usepackage{mciteplus}
+% \usepackage{chapterbib}
+
+\usepackage[numbers]{natbib}
+\renewcommand{\bibnumfmt}[1]{#1.}
+\renewcommand{\bibsection}{}
+
+% \usepackage{multibib}[resetlabels]
+\usepackage[resetlabels]{multibib}
+\usepackage{multibib}
+\newcites{ltex,soft,pres}%
+    {Journal Papers,%
+    Software,%
+      Presentations}
+
+% \newcites{papers}
+% {Journal Papers}
+% \newcites{papers,software,presentation}
+% {Journal Papers,%
+% Software,%
+% Presentations}
+
+\usepackage[compact]{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+
+\setlength{\headheight}{27pt}
+
+\lhead{\normalsize ENGR0020 Probability \& Statistics for Engineers \\ 
+University of Pittsburgh\\ \hrule}
+
+%\lhead{ENGR 1066 Introduction to Solar Cells and Nanotechnology\\
+%University of Pittsburgh\\ \hrule}
+
+
+%\chead{\textbf{Assignment 1}}
+%\rhead{\textbf{Due November 6, 2013}}
+%\runningheadrule
+\footer{}{Page \thepage\ of \numpages}{}
+
+\checkedchar{\textcolor{blue}{X}}
+\CorrectChoiceEmphasis{\color{blue}}
+
+\newcommand{\red}[1]{\textcolor{red}{[#1]}} %for displaying red texts
+%\newcommand{\red}[1]{} %for displaying red texts
+\newcommand{\blue}[1]{\textcolor{blue}{#1}} %for displaying red texts
+%\newcommand{\blue}[1]{} %for displaying red texts
+
+
+% change the blue command, so leaves vertical white space
+% 
+
+% \newcommand{\HRule}{\rule[-.2mm]{13cm}{0.2mm}}
+\newcommand{\sectionline}{%
+  \nointerlineskip \vspace{\baselineskip}%
+  \hspace{\fill}\rule{0.5\linewidth}{.7pt}\hspace{\fill}%
+  \par\nointerlineskip \vspace{\baselineskip}
+}
+% \chead{Middle top}
+
+
+\def\endncolumn{\end{tabular*}}
+
+% \renewcommand{\labelitemi}{}
+
+
+\checkboxchar{\underline{\hspace{1cm}}}
+
+\begin{document}
+% \department{1}
+\headsep = 0pt
+
+\sectionfont{\large}
+
+%\singlespace 
+\onehalfspace 
+
+\vspace{0pt}
+
+%{\noindent}{\textbf{IE 1051 Engineering Product Design}}\\
+%{\noindent}{\textbf{Exam 2013, Written Portion}}
+%\vspace{.1in}
+%\hrule
+%\vspace{0.1in}
+
+%\pagestyle{head,foot}
+\pagestyle{headandfoot}
+
+%Define points
+\pointsinrightmargin
+\setlength{\rightpointsmargin}{0cm}
+\marginpointname{ \points}
+
+%\vspace{12pt}
+{\noindent}{\textbf{Assignment \#10}}\\
+%\vspace{12pt}
+%\\
+%{\noindent}Out: Wednesday, August 28, 2013\\
+%{\noindent} Due: Tuesday, April 5, 2016
+
+\begin{questions}
+\singlespacing
+
+%\question 
+%Summary statistics for heights of fathers and sons are as follows:\\
+%average height of fathers $\approx$ 68 inches, SD $\approx$ 2.5 inches\\
+%average height of sons $\approx$ 69 inches, SD $\approx$ 2.7 inches, r $\approx$ 0.5\\
+%(a) What is the relationship between 
+%(a) Find the regression equation for predicting the height of a son from the
+%height of his father.\\
+%(b) Find the regression equation for predicting the height of a father from the
+%height of his son.
+%\begin{solution}
+%$S_xx = \sum_i^{n} (x_i - \bar{x} )^2$
+%$SD = \sqrt{S_{xx}}$
+%$SD = \sqrt{S_{xx}}$
+%r = $b_1 \times \sqrt{\frac{S_xx}{S_yy}}$
+%$b_1 = $
+%
+%(a) the slope = $0.5 \times 2.7/2.7$ = 0.5\\
+%For $-68 \times 0.5 = -34.$
+%This would be $69 - 34 = 35$
+%The equation is 
+%\begin{equation*}
+%\textrm{Height of son} = 0.5 \times \textrm{Height of father} + 35
+%\end{equation*} \\
+%(b) the slope is the same\\
+%$For -69 \times -.5 = -34.5 $
+%This would be $68 - 34.5 = 33.5$\\
+%The equation is
+%\begin{equation*}
+%\textrm{Height of father} = 0.5 \times \textrm{Height of son} + 33.5
+%\end{equation*} \\
+%\end{solution}
+
+\question Here is a hypothetical dataset called \texttt{height\_weight.csv}.
+(a) Plot the
+scatter diagram and draw the regression line for y on x.
+\begin{solution}
+\includegraphics[scale=.5]{height_weight.png}\\
+%\includegraphics[scale=.25]{Ch10C4b}\\
+%\includegraphics[scale=.25]{Ch10C4c}\\
+%\includegraphics[scale=.25]{Ch10C4d}\\
+\end{solution}
+(b) What is the R$^2$?  What does this mean?  
+\begin{solution}
+.988.  It is the fraction of variability in $y$ explained by the regression model.  
+\end{solution}
+
+
+
+
+\question 
+A small data set is shown below.
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline \hline
+x & y \\ \hline \hline
+1 & 2\\
+2 & 3\\ 
+3 & 1\\ 
+4 & 5\\ 
+5 & 6\\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+The fitted regression line is 
+$y = x + .4$.  
+\begin{parts}
+\part What happens to the regression line if you  add 3 to each value of y instead of interchanging the
+columns.
+\begin{solution}
+$y = x + 3.4$.  
+The y-intercept is increased by 3, but the slope stays the same.  
+\end{solution}
+\part What happens to the regression line if you double each value in $x$.  
+\begin{solution}
+The slope is halved.  
+$y = .5 x + .4$.  
+\end{solution}
+\end{parts}
+
+\question The data file \texttt{couplesheights.txt} has been provided with the 
+height of the husband in the first column in cm and the height of the wife in the second column in cm.  
+\begin{parts}
+\part Plot a scatter diagram.
+\part Plot the fitted regression line of the height of the wife as a function of the height of the husband.  
+\part Now plot the fitted regression line of the height of the husband as a function of the height of the wife.
+Clearly label each line. 
+\part Are the two regression lines the same or different?  Why?
+\begin{solution} 
+\includegraphics[scale=.5]{couplesHeights}
+The two regression lines are different, because one regression line picks off the centers of the vertical strips
+and the other picks off the center of the horizontal strips.  
+\end{solution}
+\end{parts}
+
+
+\question The regression method predicted that a student at the 90th
+percentile on the SAT would only be at the 69th percentile on first-year GPA. \\
+True or false, and explain: a student at the 69th percentile on first-year GPA should be
+at the 90th percentile on the SAT.  (Hint: Look at the previous question)
+\begin{parts}
+\begin{solution}
+False.  The regression lines are different as shown from the previous questions.  
+\end{solution}
+\part Someone who scored at the 30th percentile on the SAT on average should score 
+\underline{\hspace{1cm}} the 30th percentile on his/her first-year GPA.\\
+Options: lower than, about equal to, higher than \\
+Why?
+\begin{solution}
+higher than.  Regression to the mean.  
+\end{solution}
+\end{parts}
+
+
+
+%\question 
+%A professor in the School of Business in a university
+%polled a dozen colleagues about the number of
+%professional meetings they attended in the past five
+%years ($x$) and the number of papers they submitted
+%to refereed journals ($y$) during the same period. The
+%summary data are given as follows:
+%$n = 12$, $\bar{x} = 4$, $\bar{y} = 12$, 
+%$\sum_{i = 1}^{n} x_i^2 = 232$, \\
+%$\sum_{i = 1}^{n} x_i y_i = 318$, 
+%Fit a simple linear regression model between x and y by
+%finding out the estimates of intercept and slope. Comment
+%on whether attending more professional meetings
+%would result in publishing more papers.
+%\begin{solution}
+%\begin{align*}
+%b_1 &= \frac{n \sum_{i = 1}^{n} x_i y_i  - n \bar{x} n \bar{y}}{n \sum_{i = 1}^{n} x_i^2 - ( n \bar{x} )^2}  \\
+%&= \frac{12 \times 318 - 12 \times 4 \times 12 \times 12}{12 \times 232 - (12 \times 4)^2} \\
+%&= -6.45
+%\end{align*}
+%\begin{align*}
+%b_0 &= \bar{y} - b_1 \bar{x} \\
+%&= 12 + 6.45 \times 4 = 37.8
+%\end{align*}
+%Attending more professional meetings results in publishing less papers.  
+%\end{solution}
+
+\question 
+A study was made on the amount of converted
+sugar in a certain process at various temperatures. 
+The data is given in the file, \texttt{temperature\_sugar.txt}
+with the temperature in the first column and the converted sugar in the second column.  \\
+%The
+%data were coded and recorded as follows:
+%\begin{table}[H]
+%%\caption{default}
+%\begin{center}
+%\begin{tabular}{|c|c|}
+%\hline \hline
+%Temperature, x & Converted Sugar, y \\ \hline \hline
+%1.0 & 8.1 \\
+%1.1 & 7.8 \\
+%1.2 & 8.5 \\
+%1.3 & 9.8 \\
+%1.4 & 9.5 \\
+%1.5 & 8.9 \\
+%1.6 & 8.6 \\
+%1.7 & 10.2 \\
+%1.8 & 9.3 \\
+%1.9 & 9.2 \\
+%2.0 & 10.5 \\
+%\hline \hline
+%\end{tabular}
+%\end{center}
+%\label{default}
+%\end{table}%
+(a) Estimate the linear regression line.\\
+(b) Estimate the mean amount of converted sugar produced
+when the coded temperature is 1.75.\\
+(c) Plot the residuals versus temperature. Comment.
+\begin{solution}
+(a) $y = 1.8 x + 6.4$\\
+(b) $9.6$\\
+(c)
+\includegraphics[scale=.5]{residuals}
+Residuals appear to be random as desired.  
+
+\end{solution}
+
+\question For the previous question,
+(a) evaluate $s^2$;
+(b) construct a 95\% confidence interval for $\beta_0$;
+(c) construct a 95\% confidence interval for $\beta_1$.
+\begin{solution}
+(a) $s^2 = .4$
+(b) $6.4136 \pm 2.0917$
+(c) $1.809 \pm 1.36$
+\end{solution}
+
+\question 
+A mathematics placement test is given to all entering
+freshmen at a small college. A student who receives
+a grade below 35 is denied admission to the regular
+mathematics course and placed in a remedial class.
+The placement test scores and the final grades for 20
+students who took the regular course were recorded.
+The data is given in file, \texttt{placement\_grade.txt} 
+with the placement test scores in the first column and the course grade scores in the second column.  \\
+(a) Plot a scatter diagram.\\
+(b) Find the equation of the regression line to predict
+course grades from placement test scores.\\
+(c) Graph the line on the scatter diagram.\\
+(d) If 60 is the minimum passing grade, below which
+placement test score should students in the future
+be denied admission to this course?
+%\begin{table}[H]
+%%\caption{default}
+%\begin{center}
+%\begin{tabular}{|c|c|} \hline
+%Placement Test & Course Grade \\ \hline
+%50 & 53 \\
+%35 & 41 \\
+%35 &61 \\
+%40 &56\\
+%55 &68\\
+%65 &36\\
+%35 &11\\
+%60 &70\\
+%90 &79\\
+%35 &59\\
+%90 &54\\
+%80 &91\\
+%60 &48\\
+%60 &71\\
+%60 &71\\
+%40 &47\\
+%55 &53\\
+%50 &68\\
+%65 &57\\
+%50 &79\\ \hline
+%\end{tabular}
+%\end{center}
+%\label{default}
+%\end{table}
+\begin{solution}
+(a) \includegraphics[scale=.3]{p11p8}\\
+(b) y = .471 x + 32.5\\
+(d) 58.4\\
+\end{solution}
+
+\question 
+Test the hypothesis that $\beta_0 = 10$ in the previous problem against the alternative that $\beta_0 < 10$.
+Use a 0.05 level of significance.
+\begin{solution}
+%$beta0_0 = 10$
+%$t_stat = (beta0_hat - beta0_0) / se_beta0$
+%p_value = stats.t.cdf(t_stat, df_resid)
+
+$H_0: \beta_0 = 10$\\
+$H_0: \beta_0 < 10$\\
+$t = 1.78$\\
+$P = .95$\\
+Fail to reject $H_0$
+\end{solution}
+
+\question Six different machines are being considered for
+use in manufacturing rubber seals. The machines are
+being compared with respect to tensile strength of the
+product. A random sample of four seals from each machine
+is used to determine whether the mean tensile
+strength varies from machine to machine. The following
+are the tensile-strength measurements in kilograms
+per square centimeter $\times 10^{-1}$:
+\begin{table}[H]
+%\caption{default}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6 \\ \hline
+17.5&16.4&20.3&14.6&17.5&18.3 \\
+16.9&19.2&15.7&16.7&19.2&16.2 \\
+15.8&17.7&17.8&20.8&16.5&17.5 \\
+18.6&15.4&18.9&18.9&20.5&20.1 \\ \hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+Perform the analysis of variance at the 0.05 level of significance
+and indicate whether or not the mean tensile
+strengths differ significantly for the six machines.
+\begin{solution}
+$H_0: \mu_1 = \mu_2 = \ldots \mu_6$\\
+$H_1:$ At least two of the means are not equal\\
+Use the f-test.\\
+$P = .90$
+Do not reject $H_0$\\
+\end{solution}
+
+
+\question The data in the following table represent the
+number of hours of relief provided by five different
+brands of headache tablets administered to 25 subjects
+experiencing fevers of 38$^{\circ}$
+C or more. Perform the analysis
+of variance and test the hypothesis at the 0.05 level
+of significance that the mean number of hours of relief
+provided by the tablets is the same for all five brands.
+Discuss the results.
+\begin{table}[H]
+%\caption{default}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+A&B&C&D&E\\ \hline
+5.2&9.1&3.2&2.4&7.1\\
+4.7&7.1&5.8&3.4&6.6\\
+8.1&8.2&2.2&4.1&9.3\\
+6.2&6&3.1&1&4.2\\
+3&9.1&7.2&4&7.6\\ \hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+\begin{solution}
+$H_0: \mu_1 = \mu_2 = \ldots \mu_5$\\
+$H_1:$ At least two of the means are not equal\\
+Use the f-test.\\
+$P = .0015$\\
+Reject $H_0$
+\end{solution}
+
+
+
+%\question Six different machines are being considered for
+%use in manufacturing rubber seals. The machines are
+%being compared with respect to tensile strength of the
+%product. A random sample of four seals from each machine
+%is used to determine whether the mean tensile
+%strength varies from machine to machine. The following
+%are the tensile-strength measurements in kilograms
+%per square centimeter $\times 10^{-1}$:
+%\begin{table}[H]
+%%\caption{default}
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|c|c|}
+%\hline
+%1&2&3&4&5&6 \\ \hline
+%17.5&16.4&20.3&14.6&17.5&18.3 \\
+%16.9&19.2&15.7&16.7&19.2&16.2 \\
+%15.8&17.7&17.8&20.8&16.5&17.5 \\
+%18.6&15.4&18.9&18.9&20.5&20.1 \\ \hline
+%\end{tabular}
+%\end{center}
+%\label{default}
+%\end{table}%
+%Perform the analysis of variance at the 0.05 level of significance
+%and indicate whether or not the mean tensile
+%strengths differ significantly for the six machines.
+%\begin{solution}
+%$H_0: \mu_1 = \mu_2 = \ldots \mu_6$\\
+%$H_1:$ At least two of the means are not equal\\
+%Use the f-test.\\
+%$P = .90$
+%Do not reject $H_0$\\
+%\end{solution}
+%
+%
+%\question 13.2  The data in the following table represent the
+%number of hours of relief provided by five different
+%brands of headache tablets administered to 25 subjects
+%experiencing fevers of 38$^{\circ}$
+%C or more. Perform the analysis
+%of variance and test the hypothesis at the 0.05 level
+%of significance that the mean number of hours of relief
+%provided by the tablets is the same for all five brands.
+%Discuss the results.
+%\begin{table}[H]
+%%\caption{default}
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|c|c|}
+%\hline
+%A&B&C&D&E\\ \hline
+%5.2&9.1&3.2&2.4&7.1\\
+%4.7&7.1&5.8&3.4&6.6\\
+%8.1&8.2&2.2&4.1&9.3\\
+%6.2&6&3.1&1&4.2\\
+%3&9.1&7.2&4&7.6\\ \hline
+%\end{tabular}
+%\end{center}
+%\label{default}
+%\end{table}%
+%\begin{solution}
+%$H_0: \mu_1 = \mu_2 = \ldots \mu_5$\\
+%$H_1:$ At least two of the means are not equal\\
+%Use the f-test.\\
+%$P = .0015$\\
+%Reject $H_0$
+%\end{solution}
+%
+%
+%
+%
+%\question 13.3  In an article ``Shelf-Space Strategy in Retailing,Ó
+%published in Proceedings: Southern Marketing Association,
+%the effect of shelf height on the supermarket sales
+%of canned dog food is investigated. An experiment was
+%conducted at a small supermarket for a period of 8 days
+%on the sales of a single brand of dog food, referred to
+%as Arf dog food, involving three levels of shelf height:
+%knee level, waist level, and eye level. During each day,
+%the shelf height of the canned dog food was randomly
+%changed on three different occasions. The remaining
+%sections of the gondola that housed the given brand
+%were filled with a mixture of dog food brands that were
+%both familiar and unfamiliar to customers in this particular
+%geographic area. Sales, in hundreds of dollars,
+%of Arf dog food per day for the three shelf heights are
+%given. Based on the data, is there a significant difference
+%in the average daily sales of this dog food based
+%on shelf height? Use a 0.01 level of significance.
+%\begin{table}[H]
+%%\caption{default}
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|c|c|}
+%\hline
+%Knee Level & Waist Level & Eye Level \\ \hline
+%77&88&85\\
+%82&94&85\\
+%86&93&87\\
+%78&90&81\\
+%81&91&80\\
+%86&94&79\\
+%77&90&87\\
+%81&87&93\\ \hline
+%\end{tabular}
+%\end{center}
+%\label{default}
+%\end{table}%
+%\begin{solution}
+%$H_0: \mu_1 = \mu_2 = \ldots \mu_3$\\
+%$H_1:$ At least two of the means are not equal\\
+%Use the f-test.\\
+%$P = .00011$\\
+%Reject $H_0$\\
+%\end{solution}
+%
+%
+%\question 13.5   The mitochondrial enzyme NADPH:NAD
+%transhydrogenase of the common rat tapeworm (Hymenolepiasis
+%diminuta) catalyzes hydrogen in the
+%transfer from NADPH to NAD, producing NADH.
+%This enzyme is known to serve a vital role in the
+%tapewormÕs anaerobic metabolism, and it has recently
+%been hypothesized that it may serve as a proton exchange
+%pump, transferring protons across the mitochondrial
+%membrane. A study on Effect of Various
+%Substrate Concentrations on the Conformational Variation
+%of the NADPH:NAD Transhydrogenase of Hymenolepiasis
+%diminuta, conducted at Bowling Green
+%State University, was designed to assess the ability of
+%this enzyme to undergo conformation or shape changes.
+%Changes in the specific activity of the enzyme caused
+%by variations in the concentration of NADP could be
+%interpreted as supporting the theory of conformational
+%change. The enzyme in question is located in the inner
+%membrane of the tapewormÕs mitochondria. Tapeworms
+%were homogenized, and through a series of centrifugations,
+%the enzyme was isolated. Various concentrations
+%of NADP were then added to the isolated
+%enzyme solution, and the mixture was then incubated
+%in a water bath at 56$^{\circ}$C for 3 minutes. The enzyme
+%was then analyzed on a dual-beam spectrophotometer,
+%and the results shown were calculated, with the specific
+%activity of the enzyme given in nanomoles per minute
+%per milligram of protein. Test the hypothesis at the
+%0.01 level that the average specific activity is the same
+%for the four concentrations.
+%
+%\begin{table}[H]
+%%\caption{default}
+%\begin{center}
+%\begin{tabular}{|c|c|c||c|c|}
+%\hline
+%0 & 80 & 160 & \multicolumn{2}{|c|}{360} \\ \hline
+%11.01&11.38&11.02&6.04&10.31 \\
+%12.09&10.67&10.67&8.65&8.3 \\
+%10.55&12.33&11.5&7.76&9.48 \\
+%11.26&10.08&10.31&10.13&8.89 \\
+%&&&9.36& \\ \hline
+%\end{tabular}
+%\end{center}
+%\label{default}
+%\end{table}%
+%\begin{solution}
+%$H_0: \mu_1 = \mu_2 = \ldots \mu_4$\\
+%$H_1:$ At least two of the means are not equal\\
+%Use the f-test.\\
+%$P = 0.022$\\
+%Reject $H_0$\\
+%\end{solution}
+%
+%%
+%%\begin{solution}
+%%
+%%\end{solution}
+%%
+%%\question 13.9.  Use BartlettÕs test at the 0.01 level of significance
+%%to test for homogeneity of variances in Exercise
+%%13.5 on page 519.
+%%\begin{solution}
+%%$H_0: \sigma_1^2 = \sigma_2^2 = \sigma_3^2 = \sigma_4^2$\\
+%%$H_1:$ The variances are not equal\\
+%%\end{solution}
+%%
+%%\question 13.10
+%%Use CochranÕs test at the 0.01 level of significance
+%%to test for homogeneity of variances in Exercise
+%%13.4 on page 519.
+%%
+%%\question 13.12
+%%Consider the data of Review Exercise 13.45 on
+%%page 555. Make significance tests on the following contrasts:
+%%(a) B versus A, C, and D;
+%%(b) C versus A and D;
+%%(c) A versus D.
+%%\begin{solution}
+%%\begin{table}[H]
+%%%\caption{default}
+%%\begin{center}
+%%\begin{tabular}{|c|c|c|c|c|}
+%%\hline
+%%Source of Variation & Sum of Squares & Degrees of Freedom & Mean Square & Computed f \\ \hline
+%%B vs.~A, C, D & 30.67 & 1 & 30.67 & 14.28 \\
+%%C vs.~A, D & 49.92 & 1 & 49.92 & 23.23 \\
+%%A vs.~D & 5.33 & 1 & 5.33 & 2.48 \\
+%%Error & 34.38 & 16 & 2.15 & \\ \hline
+%%\end{tabular}
+%%\end{center}
+%%\label{default}
+%%\end{table}%
+%%(a) P-value = 0.0016; different\\
+%%(b) P-value = 0.0002; different\\
+%%(c) P-value = 0.1349; same\\
+%%\end{solution}
+%
+%%\question 13.13
+%%The purpose of the study The Incorporation
+%%of a Chelating Agent into a Flame Retardant Finish
+%%of a Cotton Flannelette and the Evaluation of Selected
+%%Fabric Properties conducted at Virginia Tech was to
+%%evaluate the use of a chelating agent as part of the
+%%flame-retardant finish of cotton flannelette by determining
+%%its effects upon flammability after the fabric is
+%%laundered under specific conditions. Two baths were
+%%prepared, one with carboxymethyl cellulose and one
+%%without. Twelve pieces of fabric were laundered 5 times
+%%in bath I, and 12 other pieces of fabric were laundered
+%%10 times in bath I. This was repeated using 24 additional
+%%pieces of cloth in bath II. After the washings the
+%%lengths of fabric that burned and the burn times were
+%%measured. For convenience, let us define the following
+%%treatments:
+%%
+%%
+%%Treatment 1: 5 launderings in bath I,\\
+%%Treatment 2: 5 launderings in bath II,\\
+%%Treatment 3: 10 launderings in bath I,\\
+%%Treatment 4: 10 launderings in bath II.\\
+%%
+%%Burn times, in seconds, were recorded as follows:
+%%
+%%\begin{table}[H]
+%%%\caption{default}
+%%\begin{center}
+%%\begin{tabular}{|c|c|c|c|}
+%%\hline
+%%\textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} \\
+%%13.7&6.2&27.2&18.2\\
+%%23&5.4&16.8&8.8\\
+%%15.7&5&12.9&14.5\\
+%%25.5&4.4&14.9&14.7\\
+%%15.8&5&17.1&17.1\\
+%%14.8&3.3&13&13.9\\
+%%14&16&10.8&10.6\\
+%%29.4&2.5&13.5&5.8\\
+%%9.7&1.6&25.5&7.3\\
+%%14&3.9&14.2&17.7\\
+%%12.3&2.5&27.4&18.3\\
+%%12.3&7.1&11.5&9.9\\ \hline
+%%\end{tabular}
+%%\end{center}
+%%\label{default}
+%%\end{table}%
+%%
+%%
+%% 
+%%(a) Perform an analysis of variance, using a 0.01 level of
+%%significance, and determine whether there are any
+%%significant differences among the treatment means.
+%%\begin{solution}
+%%$H_0: \mu_1 = \mu_2 = \ldots \mu_4$\\
+%%$H_1:$ At least two of the means are not equal\\
+%%$P = 2.23$\\
+%%Reject $H_0$ and accept $H_1$\\
+%%\end{solution}
+%%(b) Use single-degree-of-freedom contrasts with $\alpha =
+%%0.01$ to compare the mean burn time of treatment
+%%1 versus treatment 2 and also treatment 3 versus
+%%treatment 4.
+%%\begin{solution}
+%%For treatment 1 versus 2, $P = 0.0000024$
+%%They are different\\
+%%For treatment 1 versus 2, $P = 0.0648$
+%%Accept they are the same\\
+%%\end{solution}
+%%
+%%
+%%
+%%
+%%
+%%
+%%\question 14.1
+%%An experiment was conducted to study the effects
+%%of temperature and type of oven on the life of
+%%a particular component. Four types of ovens and
+%%3 temperature levels were used in the experiment.
+%%Twenty-four pieces were assigned randomly, two to
+%%each combination of treatments, and the following results
+%%recorded.
+%%
+%%\begin{table}[H]
+%%%\caption{default}
+%%\begin{center}
+%%\begin{tabular}{|c|c|c|c|c|}
+%%\hline \hline
+%%\textbf{Temperature ($^{\circ}$ F)} & \textbf{O$_1$} & \textbf{O$_2$} & \textbf{O$_3$} & \textbf{O$_4$} \\ \hline \hline
+%%\textbf{500} & 227&214&225&260 \\
+%%& 221&259&236&229 \\ \hline
+%%\textbf{550} & 187&181&232&246 \\
+%%& 208&179&198&273 \\ \hline
+%%\textbf{600} & 174&198&178&206 \\
+%%& 202&194&213&219 \\ \hline \hline
+%%\end{tabular}
+%%\end{center}
+%%\label{default}
+%%\end{table}%
+%%
+%%Using a 0.05 level of significance, test the hypothesis
+%%that
+%%(a) different temperatures have no effect on the life of
+%%the component;
+%%(b) different ovens have no effect on the life of the component;
+%%(c) the type of oven and temperature do not interact.
+%%\begin{solution}
+%%(a) $P = .0059$; Reject $H_0$\\
+%%(b) $P = .0159$; Reject $H_0$\\
+%%(c) $P = .2215$; Do not reject $H_0$
+%%\end{solution}
+%%
+%%\question 14.2
+%%To ascertain the stability of vitamin C in reconstituted
+%%frozen orange juice concentrate stored in a
+%%refrigerator for a period of up to one week, the study
+%%Vitamin C Retention in Reconstituted Frozen Orange
+%%Juice was conducted by the Department of Human Nutrition
+%%and Foods at Virginia Tech. Three types of
+%%frozen orange juice concentrate were tested using 3 different
+%%time periods. The time periods refer to the number
+%%of days from when the orange juice was blended
+%%until it was tested. The results, in milligrams of ascorbic
+%%acid per liter, were recorded. Use a 0.05 level of
+%%significance to test the hypothesis that
+%%(a) there is no difference in ascorbic acid contents
+%%among the different brands of orange juice concentrate;
+%%(b) there is no difference in ascorbic acid contents for
+%%the different time periods;
+%%(c) the brands of orange juice concentrate and the
+%%number of days from the time the juice was blended
+%%until it was tested do not interact.
+%%
+%%\begin{table}[H]
+%%%\caption{default}
+%%\begin{center}
+%%\begin{tabular}{|c|c|c|c|c|c|c|}
+%%\hline 
+%%& \multicolumn{6}{|c|}{\textbf{Time (days)}} \\ \hline
+%%\textbf{Brand} & \multicolumn{2}{|c|}{\textbf{0}} & \multicolumn{2}{|c|}{\textbf{3}} & \multicolumn{2}{|c|}{\textbf{7}} \\ \hline
+%%\textbf{Richfood} & 52.6&54.2&49.4&49.2&42.7&48.8 \\
+%%& 49.8&46.5&42.8&53.2&40.4&47.6 \\ \hline
+%%\textbf{Sealed-Sweet} & 56.0&48.0&48.8&44.0&49.2&44 \\
+%%& 49.6&48.4&44.0&42.4&42.0&43.2 \\ \hline
+%%\textbf{Minute Maid} & 52.5&52.0&48.0&47.0&48.5&43.3 \\
+%%&51.8&53.6&48.2&49.6&45.2&47.6 \\ \hline
+%%\end{tabular}
+%%\end{center}
+%%\label{default}
+%%\end{table}%
+%%
+%%\begin{solution}
+%%(a) $P = .0059$; Reject $H_0$\\
+%%(b) $P = .0159$; Reject $H_0$\\
+%%(c) $P = .2215$; Do not reject $H_0$
+%%\end{solution}
+%
+%\question 
+%A study is made of incomes among full-time workers age 25-54 in a certain town.
+%A simple random sample is taken, of 250 people with high school degrees: the
+%sample average income is \$30,000 and the SD is \$25,000. Another simple random
+%sample is taken, of 250 people with college degrees: the sample average income is
+%\$50,000 and the SD is \$40,000.
+%Question: Is the difference in averages real, or due to chance?
+%To answer this question, which do you use?
+%(i) the one-sample $z$-test.
+%(ii) the two-sample $z$-test.
+%(iii) the one-sample $t$-test.
+%(iv) the two-sample $t$-test.
+%(iv) the $\chi^2$-test
+%%, with a null hypothesis that tells you the c
+%%( section I ) .
+%(v) the $F$-test.\\
+%Now answer the question.
+%\begin{solution}
+%The two sample $z$-test.  
+%The difference is $20000$.  The SE for the difference is $2983.3$.  
+%The difference is definitely real.  
+%It is over 6 SEs.  
+%\end{solution}
+%
+%
+%\question 
+%Demographers think that about 55\% of newborns are male. In a certain hospital,
+%568 out of 1,000 consecutive births are male.
+%Question: Are the data consistent with the theory?
+%To answer this question, which do you use?
+%(i) the one-sample $z$-test.
+%(ii) the two-sample $z$-test.
+%(iii) the one-sample $t$-test.
+%(iv) the two-sample $t$-test.
+%(iv) the $\chi^2$-test
+%%(iv) the $\chi^2$-test for independence (section 4).
+%(v) the $F$-test.\\
+%%, with a null hypothesis that tells you the c
+%%( section I ) .
+%
+%
+%Now answer the question.
+%\begin{solution}
+%(i) the one-sample $z$-test.\\
+%Null-hypothesis; 55\% of newborns are male\\
+%Alternative-hypothesis; 55\% of newborns are not male.\\
+%$z = (568 - 550)/15.7321 = 1.14$
+%Should be two-sided test.  
+%$P(Z > 1.1442 or Z < 1.1442) = .25$
+%Accept the null-hypothesis.  
+%\end{solution}
+%
+%\question A gambler is accused of using a loaded die, but he pleads innocent.
+%You are called in to interpret the data and determine if the die is fair.  
+%Suppose the observed frequencies in table 2 had come out as shown in table 7A
+%below. Compute the value of $\chi^2$, the degrees of freedom, and P. What can be
+%inferred?
+%\begin{solution}
+%The degrees of freedom is 5. 
+%$\chi^2 = 13.2$.\\
+%P = .0216
+%\end{solution}
+%
+%
+%
+%\begin{table}[H]
+%%\caption{default}
+%\begin{center}
+%\begin{tabular}{ || c|c||c|c || c|c || c|c ||}
+%\hline
+%\multicolumn{2}{||c ||}{Table 7 A} & \multicolumn{2}{ c ||}{Table 7 B} &  \multicolumn{2}{ c ||}{Table 7 C} & \multicolumn{2}{ c ||}{Table 7 D}  \\ \hline
+%& Observed & & Observed & & Observed & & Observed \\
+%Value & frequency &  Value &  frequency &  Value &  frequency &  Value &  frequency \\
+%1 & 5 & 1 & 9 & 1 & 90 & 1 & 10,287 \\
+%2 & 7 & 2 & 11 & 2 & 110 & 2 & 10,056 \\
+%3 & 17 & 3 & 10 & 3 & 100 & 3 & 9,708 \\
+%4 & 16 & 4 & 8 & 4 & 80 & 4 & 10,080 \\
+%5 & 8 & 5 & 12 & 5 & 120 & 5 & 9,935 \\
+%6 & 7 & 6 & 10 & 6 & 100 & 6 & 9,934 \\ \hline
+%\end{tabular}
+%\end{center}
+%\label{default}
+%\end{table}%
+%
+%
+%\question 
+%Suppose the observed frequencies in table l had come out as shown in table 7B.
+%Make a $\chi^2$-test of the null hypothesis that the die is fair.
+%\begin{solution}
+%The degrees of freedom is 5. 
+%$\chi^2 = 1$\\
+%P = .96\\
+%The die is fair.
+%\end{solution}
+%
+%
+%\question 
+%Suppose that table I had 600 entries instead of 60, with observed frequencies as
+%shown in table 7C. Make a $\chi^2$-test of the null hypothesis that the die is fair.
+%\begin{solution}
+%The degrees of freedom is 5. 
+%$\chi^2 = 10$\\
+%$P = .0752$
+%The die still appears fair.
+%\end{solution}
+%
+%\question 
+%Suppose that table 1 had 60,000 entries, with the observed frequencies as shown
+%in table 7D.
+%(a) Compute the percentage of times each value showed up.
+%(b) Does the die look fair?
+%(c) Make a $\chi^2$-test of the null hypothesis that the die is fair.
+%\begin{solution}
+%(a) .174, .168, .162, .168, 166, .166\\
+%(b) Yes\\
+%(c) $chi^2 = 18.6$;\\ 
+%$P = .0023$; the die looks loaded
+%\end{solution}
+%
+
+
+\end{questions}
+
+\end{document} 
